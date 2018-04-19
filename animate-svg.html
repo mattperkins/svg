@@ -40,6 +40,7 @@
 
 </body>
 <script>
+    // draw bar chart
     const svg = document.querySelector('svg')
     const data = [10, 50, 20, 100]
     data.forEach(function(num,index){
@@ -53,10 +54,10 @@
     // simulate a progress bar
     const element = document.getElementById('percent')
     let percent = 0
-    setInterval(function () {
-        percent += 1
-        element.setAttribute('d', 'M 0 100 h' + percent)
-    }, 100)
+    // setInterval(function () {
+    //     percent += 1
+    //     element.setAttribute('d', 'M 0 100 h' + percent)
+    // }, 100)
 
 </script>
 </html>
