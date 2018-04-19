@@ -47,6 +47,7 @@
         const bar = document.createElementNS('http://www.w3.org/2000/svg', 'path')
         bar.setAttribute('d', `M 50 ${index *10 + 50} l ${num} 0 z`)
         bar.style.stroke = 'black'
+        bar.style.strokeWidth = "5"
         svg.appendChild(bar)
     })
 
