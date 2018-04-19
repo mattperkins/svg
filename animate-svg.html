@@ -35,13 +35,14 @@
     <!-- simulate a progress bar -->
     <path id="percent" fill="none" stroke="red"/>
 
-
+<g id="chart"></g>
 </svg>
 
 </body>
 <script>
     // draw bar chart
-    const svg = document.querySelector('svg')
+    const chart = document.querySelector('#chart') 
+    // const svg = document.querySelector('svg')
     const data = [10, 50, 20, 100]
     data.forEach(function(num,index){
         const bar = document.createElementNS('http://www.w3.org/2000/svg', 'path')
