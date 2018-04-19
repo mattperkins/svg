@@ -35,15 +35,18 @@
     <!-- simulate a progress bar -->
     <path id="percent" fill="none" stroke="red"/>
 
-<g id="chart"></g>
+    <g id="chart" transform="translate(-50, 150) rotate(-90)" stroke="red" stroke-width="5"></g>
+    
 </svg>
 
 </body>
 <script>
     // draw bar chart
     const chart = document.querySelector('#chart') 
-    // const svg = document.querySelector('svg')
+    const svg = document.querySelector('svg')
     const data = [10, 50, 20, 100]
+
+    // global svg tag
     data.forEach(function(num,index){
         const bar = document.createElementNS('http://www.w3.org/2000/svg', 'path')
         bar.setAttribute('d', `M 50 ${index *10 + 50} l ${num} 0 z`)
@@ -52,6 +55,12 @@
         svg.appendChild(bar)
     })
 
+    // #chart
+    data.forEach(function(num,index){
+        const bar2 = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+        bar2.setAttribute('d', `M 50 ${index *10 + 70} l ${num} 0 z`)
+        chart.appendChild(bar2)
+})
 
     // simulate a progress bar
     const element = document.getElementById('percent')
