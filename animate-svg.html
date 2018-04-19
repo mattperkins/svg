@@ -39,12 +39,27 @@
     
 </svg>
 
-</body>
+<style>
+    path:nth-child(4) {
+        animation: grow 5s
+    }
+    @keyframes grow {
+        0% {
+            transform: scaleX(0);
+        }
+        100% {
+            transform: scaleX(1)
+        }
+    }
+</style>
+
+
 <script>
     // draw bar chart
     const chart = document.querySelector('#chart') 
     const svg = document.querySelector('svg')
     const data = [10, 50, 20, 100]
+    const data2 = [10, 50, 20, 80]
 
     // global svg tag
     data.forEach(function(num,index){
@@ -56,9 +71,9 @@
     })
 
     // #chart
-    data.forEach(function(num,index){
+    data2.forEach(function(num,index){
         const bar2 = document.createElementNS('http://www.w3.org/2000/svg', 'path')
-        bar2.setAttribute('d', `M 50 ${index *10 + 70} l ${num} 0 z`)
+        bar2.setAttribute('d', `M 50 ${index *10 + 100} l ${num} 0 z`)
         chart.appendChild(bar2)
 })
 
@@ -71,4 +86,5 @@
     // }, 100)
 
 </script>
+</body>
 </html>
