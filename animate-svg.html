@@ -10,7 +10,7 @@
     
 <svg 
     width="400"
-    viewBox="0 0 50 50"
+    viewBox="0 0 100 100"
     style="border: 1px solid #ddd"; >
     <!-- <rect 
         width="30" 
@@ -22,25 +22,42 @@
     /> -->
     <!-- M = "move to coordinate positions" -->
     <!-- capital letters make the path absolute -->
+    
     <path d="M 0 0 L 0 0 L 30 30 L 0 30 L 30 0" /> 
+    
     <!-- lower case letters make the path relative -->
     <path d="M 10 0 l 30 5 l 0 30 l -30 0 0 -35" stroke="red" fill="none" />
+    
     <!-- can be simplified using h and v and z (which closes the path) -->
     <path d="M 0 10 h 30 v 30 h -30 z" stroke="green" fill="none" />
 
-    <path id="percent" fill="none" stroke="red"/>
+    <!-- simulate a progress bar -->
+    <!-- <path id="percent" fill="none" stroke="red"/> -->
+
+
 </svg>
 
 </body>
 <script>
-    const element = document.getElementById('percent')
+    const svg = document.querySelector('svg')
+    const data = [10, 50, 20, 100]
+    data.forEach(function(num,index){
+        const bar = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+        bar.setAttribute('d', `M 50 ${index *10 + 50} l ${num} 0 z`)
+        bar.style.stroke = 'black'
+        svg.appendChild(bar)
+    })
 
-    let percent = 0
 
-    setInterval(function () {
-        percent += 1
-        element.setAttribute('d', 'M 0 50 h' + percent)
-    }, 100)
+    // simulate a progress bar
+    // const element = document.getElementById('percent')
+
+    // let percent = 0
+
+    // setInterval(function () {
+    //     percent += 1
+    //     element.setAttribute('d', 'M 0 50 h' + percent)
+    // }, 100)
 
 </script>
 </html>
